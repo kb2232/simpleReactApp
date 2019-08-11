@@ -1,10 +1,9 @@
 import React from 'react';
-import Comp1 from './component/comp1';
-import { Error} from './component';
-import {Button} from './utility';
-import './App.css';
+import Comp2 from '../component/comp2';
+import { Error} from '../component';
+import '../App.css';
 
-class App extends React.Component{
+class Comp1 extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -14,20 +13,20 @@ class App extends React.Component{
   componentDidMount(){
     setTimeout(() => { 
       this.setState(() => ({timecycle: this.state.timecycle+1}))
-    }, 5000);
+    }, 3000);
   }
   render(){
     switch(this.state.timecycle){
       case 0:
           return (
             <div className="App">
-              Test will start in five seconds
+              COMPONENT 1 - component 2 in 3 seconds
             </div>
           );
       case 1:
           return (
             <div className="App">
-              <Comp1 />
+              <Comp2 />
             </div>
           );
       default:
@@ -41,4 +40,4 @@ class App extends React.Component{
   }
 }
 
-export default App;
+export default Comp1;
